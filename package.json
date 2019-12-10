@@ -7,9 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "npm-run-all --parallel watch:server start:web",
-    "start:web": "ng serve",
-    "start:server": "node server.js",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
