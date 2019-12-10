@@ -4,24 +4,26 @@
 
 <mat-tab-group>
   <mat-tab label="Daily Top News"> 
-    
-        <mat-list *ngFor="let news of allNews" style="position:absolute; left:10px;">
-            <mat-list-item>
-                <a (href)="news.url" mat-menu-item><mat-icon>home</mat-icon></a>
-            </mat-list-item>
-          </mat-list>
-            <mat-selection-list style="position:absolute; left:100px;">
-                <mat-list-option *ngFor="let news of allNews">
-                  {{news.title}}
-                </mat-list-option>
-      
-              </mat-selection-list>  
-    
-    
+      <div class="grid-container">
+          <div class="icons">
+              <mat-list role="list" *ngFor="let news of allNews">
+                  <mat-list-item >
+                    <a [href]="news.url"><mat-icon>language</mat-icon></a>
+                  </mat-list-item>
+                </mat-list>
+           
+          </div>
+          <div class="titles">
+              <mat-selection-list>
+                  <mat-list-option *ngFor="let news of allNews">
+                    {{news.title}}
+                  </mat-list-option>
+                </mat-selection-list>  
+          </div>
+        </div>
   </mat-tab>
   <mat-tab label="Saved News"> todo </mat-tab>
 </mat-tab-group>
-
 
 <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="onSaveClick()">Save</button>
