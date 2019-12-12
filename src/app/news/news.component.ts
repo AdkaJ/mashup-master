@@ -13,9 +13,12 @@ export class NewsComponent implements OnInit {
   constructor(private newsService: NewsService, public dialog: MatDialog) { }
 
   ngOnInit() {
-   
+    this.newsService.getStoredNews().subscribe(res => {
+      console.log(res);
+    })
   }
 
+  
   showNews() {
     try {
       this.newsService.getData().subscribe(res => {

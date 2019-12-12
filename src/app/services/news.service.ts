@@ -17,6 +17,12 @@ export class NewsService {
         );
     }
 
+    getStoredNews() {
+        return this.http.get("https://mash-up-vaxjo.herokuapp.com/favoritenews", {}).pipe(
+            catchError(this.handleError)
+        )
+    }
+
     private handleError(error: Response | any) {
         let errMsg: string;
         if (error instanceof Response) {
